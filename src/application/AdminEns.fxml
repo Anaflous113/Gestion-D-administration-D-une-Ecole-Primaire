@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProfilController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminEnsController">
    <children>
       <BorderPane layoutX="-1.0" prefHeight="487.0" prefWidth="184.0" style="-fx-background-color: #A479B8;">
          <top>
@@ -23,7 +23,7 @@
             </ImageView>
          </top>
          <center>
-            <VBox prefHeight="357.0" prefWidth="184.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="357.0" prefWidth="168.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
                      <font>
@@ -44,7 +44,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn2" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToEns" prefHeight="49.0" prefWidth="201.0" style="-fx-background-color: none;" text="Enseignants" textFill="#f8f5f5">
+                  <Button fx:id="btn2" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" style="-fx-background-color: #845f97;" text="Enseignants" textFill="#f8f5f5">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -82,13 +82,16 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn4" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0" prefWidth="188.0" style="-fx-background-color: none;" text="Classes" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+                  <Button fx:id="btn4" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0" prefWidth="188.0" style="-fx-background-color: none;" stylesheets="@application.css" text="Classes" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <graphic>
                         <HBox prefHeight="28.0" prefWidth="105.0" scaleX="1.04">
                            <children>
@@ -109,9 +112,6 @@
                            </padding>
                         </HBox>
                      </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                   <Button fx:id="btn5" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: none;" text="Emploi du temps" textFill="WHITE">
                      <font>
@@ -124,6 +124,9 @@
                                  <image>
                                     <Image url="@../Images/icons8-calendrier-64.png" />
                                  </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
                               </ImageView>
                            </children>
                         </HBox>
@@ -132,7 +135,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn6" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="189.0" style="-fx-background-color: none;" text="Message" textFill="WHITE">
+                  <Button fx:id="btn6" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="190.0" style="-fx-background-color: none;" text="Message" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -158,6 +161,7 @@
             </VBox>
          </center>
       </BorderPane>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="29.0" prefWidth="27.0" />
       <Label layoutX="253.0" layoutY="43.0" prefHeight="17.0" prefWidth="46.0" text="Admin" textFill="#a479b8">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -168,36 +172,14 @@
             <Image url="@../Images/admin.png" />
          </image>
       </ImageView>
-      <Label layoutX="687.0" layoutY="44.0" text="Log Out" textFill="#a479b8">
+      <Label layoutX="697.0" layoutY="43.0" text="Log Out" textFill="#a479b8">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="658.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="668.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/logout%20(2).png" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutX="289.0" layoutY="107.0" prefHeight="310.0" prefWidth="349.0" style="-fx-background-color: #e6e6e6;">
-         <children>
-            <Label layoutX="133.0" layoutY="37.0" text="Hassan Ettalbi" textFill="#363333">
-               <font>
-                  <Font name="Arial Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="34.0" layoutY="89.0" text="Administrateur ID" />
-            <Label layoutX="34.0" layoutY="140.0" text="Poste" />
-            <Label layoutX="34.0" layoutY="191.0" text="Mail" />
-            <Label layoutX="34.0" layoutY="242.0" text="Mot de passe" />
-            <Label layoutX="227.0" layoutY="89.0" text="16873" />
-            <Label layoutX="227.0" layoutY="140.0" text="Directeur" />
-            <Label layoutX="227.0" layoutY="191.0" text="admin@gmail.com" />
-            <Label layoutX="227.0" layoutY="242.0" text="1234" />
-         </children>
-      </AnchorPane>
-      <ImageView cache="true" fitHeight="77.0" fitWidth="71.0" layoutX="429.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Images/direct.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="Close" fitHeight="19.0" fitWidth="19.0" layoutX="771.0" layoutY="8.0" onMouseClicked="#Close" pickOnBounds="true" preserveRatio="true" styleClass="application.css">
@@ -215,6 +197,16 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+      </ImageView>
+      <Label layoutX="225.0" layoutY="87.0" text="Gérer les enseignants">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="201.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/droit.png" />
+         </image>
       </ImageView>
    </children>
 </AnchorPane>

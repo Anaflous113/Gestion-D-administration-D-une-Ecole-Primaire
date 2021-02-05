@@ -23,7 +23,7 @@
             </ImageView>
          </top>
          <center>
-            <VBox prefHeight="357.0" prefWidth="168.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="357.0" prefWidth="184.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
                      <font>

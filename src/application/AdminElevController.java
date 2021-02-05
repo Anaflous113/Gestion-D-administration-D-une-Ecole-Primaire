@@ -13,7 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class AdminEnsController {
+public class AdminElevController {
 	  @FXML
 	    private Button btn1;
 
@@ -38,14 +38,14 @@ public class AdminEnsController {
 	    private Scene scene;
 	    private Parent root;
 	    
-	
-	    public void switchToElev(ActionEvent event) throws IOException {
-	        root = FXMLLoader.load(getClass().getResource("AdminElev.fxml"));
-	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	        scene = new Scene(root);
-	        stage.setScene(scene);
-	        stage.show();
-	       }
+	    
+	    public void switchToEns(ActionEvent event) throws IOException {
+	     root = FXMLLoader.load(getClass().getResource("AdminEns.fxml"));
+	     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	     scene = new Scene(root);
+	     stage.setScene(scene);
+	     stage.show();
+	    }
 	    public void switchToClas(ActionEvent event) throws IOException {
 	        root = FXMLLoader.load(getClass().getResource("AdminClas.fxml"));
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -77,6 +77,4 @@ public class AdminEnsController {
 	        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
 	        stage.setIconified(true);
 	    }
-	
-	
 }

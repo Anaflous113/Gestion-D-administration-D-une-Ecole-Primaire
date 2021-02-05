@@ -13,7 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class ProfilController {
+public class AdminMssgController {
 
 	@FXML
     private Button btn1;
@@ -62,13 +62,6 @@ public class ProfilController {
        }
     public void switchToEmp(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AdminEmp.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-       }
-    public void switchToMssg(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("AdminMssg.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

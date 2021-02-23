@@ -13,9 +13,12 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws  Exception{
 		
 
+
 		
 
 		 Parent root = FXMLLoader.load(getClass().getResource("AdminEmp.fxml"));
+
+	
 
 		 Scene scene = new Scene (root);
 		

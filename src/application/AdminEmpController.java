@@ -79,7 +79,13 @@ public class AdminEmpController {
 	        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
 	        stage.setIconified(true);
 	    }
-
+	    public void switchToEmploi(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("/application/emploi.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
 
 	
 }
+	    }

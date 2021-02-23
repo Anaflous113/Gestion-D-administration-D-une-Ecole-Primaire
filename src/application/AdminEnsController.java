@@ -1,5 +1,9 @@
 package application;
 
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
+
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -8,8 +12,12 @@ import com.sun.javafx.binding.SelectBinding.AsInteger;
 import classProjet.Enseignant;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -39,7 +47,39 @@ public class AdminEnsController {
 
 	    @FXML
 	    private ImageView Close;
+	    @FXML private Stage stage;
+	    private Scene scene;
+	    private Parent root;
+	    
 	
+	    public void switchToElev(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("AdminElev.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	       }
+	    public void switchToClas(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("AdminClas.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	       }
+	    public void switchToEmp(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("AdminEmp.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	       }
+	    public void switchToMssg(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("AdminMssg.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	       }
 	    @FXML
 	    public void Close(MouseEvent mouseEvent) {
 	        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();

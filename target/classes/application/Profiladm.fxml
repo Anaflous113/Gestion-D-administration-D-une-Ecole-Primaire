@@ -63,7 +63,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn3" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="204.0" style="-fx-background-color: none;" text="Elèves" textFill="WHITE">
+                  <Button fx:id="btn3" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToElev" prefHeight="49.0" prefWidth="204.0" style="-fx-background-color: none;" text="Elèves" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -82,7 +82,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn4" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0" prefWidth="188.0" style="-fx-background-color: none;" text="Classes" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+                  <Button fx:id="btn4" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToClas" prefHeight="49.0" prefWidth="188.0" style="-fx-background-color: none;" text="Classes" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -113,7 +113,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn5" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: none;" text="Emploi du temps" textFill="WHITE">
+                  <Button fx:id="btn5" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToEmp" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: none;" text="Emploi du temps" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -132,7 +132,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn6" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="189.0" style="-fx-background-color: none;" text="Message" textFill="WHITE">
+                  <Button fx:id="btn6" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToMssg" prefHeight="49.0" prefWidth="189.0" style="-fx-background-color: none;" text="Message" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -168,12 +168,12 @@
             <Image url="@../Images/admin.png" />
          </image>
       </ImageView>
-      <Label layoutX="687.0" layoutY="44.0" text="Log Out" textFill="#a479b8">
+      <Label layoutX="697.0" layoutY="43.0" text="Log Out" textFill="#a479b8">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="658.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="668.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/logout%20(2).png" />
          </image>

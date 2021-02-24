@@ -16,7 +16,7 @@ public class Main extends Application {
 
 		
 
-		 Parent root = FXMLLoader.load(getClass().getResource("AdminEmp.fxml"));
+		 Parent root = FXMLLoader.load(getClass().getResource("AddEns.fxml"));
 
 	
 

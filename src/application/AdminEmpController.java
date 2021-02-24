@@ -36,34 +36,43 @@ public class AdminEmpController {
 
 	    @FXML
 	    private ImageView Close;
-	    @FXML private Stage stage;
+	    @FXML
+	    private Stage stage;
 	    private Scene scene;
 	    private Parent root;
 	    
+	    public void switchToAccueil(ActionEvent event) throws IOException {
+		     root = FXMLLoader.load(getClass().getResource("/application/Profiladm.fxml"));
+		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		     scene = new Scene(root);
+		     stage.setScene(scene);
+		     stage.show();
+		    }
+	    
 	
 	    public void switchToElev(ActionEvent event) throws IOException {
-	        root = FXMLLoader.load(getClass().getResource("AdminElev.fxml"));
+	        root = FXMLLoader.load(getClass().getResource("/application/AdminElev.fxml"));
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
 	       }
 	    public void switchToClas(ActionEvent event) throws IOException {
-	        root = FXMLLoader.load(getClass().getResource("AdminClas.fxml"));
+	        root = FXMLLoader.load(getClass().getResource("/application/AdminClas.fxml"));
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
 	       }
 	    public void switchToEns(ActionEvent event) throws IOException {
-	        root = FXMLLoader.load(getClass().getResource("AdminEns.fxml"));
+	        root = FXMLLoader.load(getClass().getResource("/application/AdminEns.fxml"));
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.show();
 	       }
 	    public void switchToMssg(ActionEvent event) throws IOException {
-	        root = FXMLLoader.load(getClass().getResource("AdminMssg.fxml"));
+	        root = FXMLLoader.load(getClass().getResource("/application/AdminMssg.fxml"));
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        scene = new Scene(root);
 	        stage.setScene(scene);

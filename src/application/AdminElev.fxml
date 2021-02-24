@@ -27,7 +27,7 @@
          <center>
             <VBox layoutX="-1.0" prefHeight="357.0" prefWidth="168.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
+                  <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToAccueil" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -222,5 +222,10 @@
             <TableColumn fx:id="NoteTotaleColumn" prefWidth="75.0" text="NoteTotale" />
         </columns>
       </TableView>
+      <Button fx:id="btn7" layoutX="670.0" layoutY="397.0" mnemonicParsing="false" onAction="#switchToAddE" style="-fx-background-color: #a479b8;" text="Ajouter " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

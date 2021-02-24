@@ -38,6 +38,13 @@ public class AdminMssgController {
     private Scene scene;
     private Parent root;
     
+    public void switchToAccueil(ActionEvent event) throws IOException {
+	     root = FXMLLoader.load(getClass().getResource("Profiladm.fxml"));
+	     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	     scene = new Scene(root);
+	     stage.setScene(scene);
+	     stage.show();
+	    }
     
     public void switchToEns(ActionEvent event) throws IOException {
      root = FXMLLoader.load(getClass().getResource("AdminEns.fxml"));

@@ -39,6 +39,9 @@ public class AdminElevController {
 
 	    @FXML
 	    private Button btn6;
+	    
+	    @FXML
+	    private Button btn7;
 
 	    @FXML
 	    private ImageView Close;
@@ -46,6 +49,22 @@ public class AdminElevController {
 	    private Scene scene;
 	    private Parent root;
 	    
+	    
+	    public void switchToAddE(ActionEvent event) throws IOException {
+		     root = FXMLLoader.load(getClass().getResource("AddEleve.fxml"));
+		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		     scene = new Scene(root);
+		     stage.setScene(scene);
+		     stage.show();
+		    }
+	    
+	    public void switchToAccueil(ActionEvent event) throws IOException {
+		     root = FXMLLoader.load(getClass().getResource("Profiladm.fxml"));
+		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		     scene = new Scene(root);
+		     stage.setScene(scene);
+		     stage.show();
+		    }
 	    
 	    public void switchToEns(ActionEvent event) throws IOException {
 	     root = FXMLLoader.load(getClass().getResource("AdminEns.fxml"));

@@ -11,7 +11,10 @@ import org.apache.commons.io.FileUtils;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,7 +25,13 @@ import javafx.stage.Stage;
 
 
 public class emploiController {
-
+	  
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    
+	  @FXML
+	    private Button brtnr;
 	  @FXML
 	    private Button btn;
 
@@ -63,7 +72,7 @@ public class emploiController {
 	    @FXML
 	    void modifyTimeTable(ActionEvent event) {
 	        Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-	        FileChooser       fileChooser = new FileChooser() ;
+	         fileChooser = new FileChooser() ;
 	        fileChooser.setTitle("open image") ;
 	        //set to user’s directory or go to the default C drive if cannot access
 	        File adminDirectory = new File(".") ;
@@ -76,4 +85,13 @@ public class emploiController {
 	            e.printStackTrace();
 	        }
 	    }
+	    
+	    
+	    public void switchToAdminEmp(ActionEvent event) throws IOException {
+		     root = FXMLLoader.load(getClass().getResource("/application/AdminEmp.fxml"));
+		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		     scene = new Scene(root);
+		     stage.setScene(scene);
+		     stage.show();
+		    }
 	    }

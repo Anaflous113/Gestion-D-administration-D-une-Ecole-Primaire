@@ -16,7 +16,11 @@ public class Main extends Application {
 
 		
 
+<<<<<<< HEAD
 		 Parent root = FXMLLoader.load(getClass().getResource("AddEns.fxml"));
+=======
+		 Parent root = FXMLLoader.load(getClass().getResource("choix.fxml"));
+>>>>>>> 05bdd18a0c9bb747cf1800542789fb4e02e2867c
 
 	
 

@@ -178,10 +178,13 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="668.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="668.0" layoutY="40.0" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/logout%20(2).png" />
+            <Image url="@../Images/logout2.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fx:id="Close" fitHeight="19.0" fitWidth="19.0" layoutX="771.0" layoutY="8.0" onMouseClicked="#Close" pickOnBounds="true" preserveRatio="true" styleClass="application.css">
          <image>

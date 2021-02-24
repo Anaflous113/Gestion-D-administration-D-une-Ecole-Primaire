@@ -48,7 +48,13 @@ public class AdminElevController {
 	    @FXML private Stage stage;
 	    private Scene scene;
 	    private Parent root;
-	    
+	    public void logOut(MouseEvent  event) throws IOException {
+		     root = FXMLLoader.load(getClass().getResource("Choix.fxml"));
+		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		     scene = new Scene(root);
+		     stage.setScene(scene);
+		     stage.show();
+		     }
 	    
 	    public void switchToAddE(ActionEvent event) throws IOException {
 		     root = FXMLLoader.load(getClass().getResource("AddEleve.fxml"));

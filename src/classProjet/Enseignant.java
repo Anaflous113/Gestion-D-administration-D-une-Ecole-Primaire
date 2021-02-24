@@ -18,6 +18,7 @@ public class Enseignant {
 		this.enseignantId = enseignantId;
 		NbrAbs = nbrAbs;
 	}
+	
 	public String getNom() {
 		return nom;
 	}

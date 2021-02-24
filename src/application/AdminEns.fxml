@@ -27,7 +27,7 @@
          <center>
             <VBox prefHeight="357.0" prefWidth="168.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
+                  <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToAcceuil" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -115,7 +115,7 @@
                         </HBox>
                      </graphic>
                   </Button>
-                  <Button fx:id="btn5" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: none;" text="Emploi du temps" textFill="WHITE">
+                  <Button fx:id="btn5" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToEmp" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: none;" text="Emploi du temps" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -220,8 +220,8 @@
             <TableColumn fx:id="NombreAbsColumn" prefWidth="75.0" text="NombreAbs" />
         </columns>
       </TableView>
-      <Button layoutX="299.0" layoutY="405.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Add" />
-      <Button layoutX="472.0" layoutY="405.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Update" />
-      <Button layoutX="637.0" layoutY="405.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Delete" />
+      <Button fx:id="btn7" layoutX="299.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToAjouter" prefHeight="30.0" prefWidth="120.0" text="Ajouter" />
+      <Button fx:id="btn8" layoutX="472.0" layoutY="405.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Modifier" />
+      <Button fx:id="btn9" layoutX="637.0" layoutY="405.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Supprimer" />
    </children>
 </AnchorPane>

@@ -42,6 +42,15 @@ public class AdminEnsController {
 
 	    @FXML
 	    private Button btn6;
+	    
+	    @FXML
+	    private Button btn7;
+	    
+	    @FXML
+	    private Button btn8;
+	    
+	    @FXML
+	    private Button btn9;
 
 	    @FXML
 	    private ImageView Close;
@@ -57,6 +66,25 @@ public class AdminEnsController {
 	        stage.setScene(scene);
 	        stage.show();
 	       }
+	    
+	    public void switchToAcceuil(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("Profiladm.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	       }
+	    
+	   
+	    public void switchToAjouter(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("/application/AddEns.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	       }
+	    
+	    
 	    public void switchToClas(ActionEvent event) throws IOException {
 	        root = FXMLLoader.load(getClass().getResource("AdminClas.fxml"));
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -2,6 +2,9 @@ package application;
 
 import java.io.IOException;
 
+import classProjet.Classe;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +12,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -77,6 +83,40 @@ public class AdminClasController {
 	        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
 	        stage.setIconified(true);
 	    }
+	    
+	    @FXML
+	    private TableView<Classe> tableView;
+
+		@FXML
+	    private TableColumn<Classe, Integer> IdClasseColumn;
+	    @FXML
+	    private TableColumn<Classe, String> NomClasseColumn;
+	    @FXML
+	    private TableColumn<Classe, String> NiveauColumn;
+	    @FXML
+	    private TableColumn<Classe, Double> MoyenneColumn;
+	    
+	    
+	    public void initialize() {
+	    	//set up the columns in the table
+	    	IdClasseColumn.setCellValueFactory(new PropertyValueFactory<Classe,Integer>("idC"));
+	    	NomClasseColumn.setCellValueFactory(new PropertyValueFactory<Classe,String>("nomC"));
+	    	NiveauColumn.setCellValueFactory(new PropertyValueFactory<Classe,String>("niveau"));
+	    	MoyenneColumn.setCellValueFactory(new PropertyValueFactory<Classe,Double>("moyenne"));
+	    	
+	    	//load some data
+	    	tableView.setItems(getClasse());
+	    }
+	    
+	    public ObservableList<Classe> getClasse(){
+			
+	    	ObservableList<Classe> classe = FXCollections.observableArrayList();
+	    	classe.add(new Classe(12,16.5,"hajar","ouajjani"));
+	    	return classe;
+	    	
+	    	
+	    }
+	   
 	
 	
 }

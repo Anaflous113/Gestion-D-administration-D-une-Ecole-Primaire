@@ -7,8 +7,6 @@ import javafx.event.ActionEvent;
 import java.time.LocalDate;
 import java.time.Month;
 
-import com.sun.javafx.binding.SelectBinding.AsInteger;
-
 import classProjet.Enseignant;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -93,10 +91,9 @@ public class AdminEnsController {
 	    
 	    @FXML
 	    private TableView<Enseignant> tableView;
-	    
-	    @SuppressWarnings("restriction")
+
 		@FXML
-	    private TableColumn<Enseignant, AsInteger> EnseignantIdColumn;
+	    private TableColumn<Enseignant, Integer> EnseignantIdColumn;
 	    @FXML
 	    private TableColumn<Enseignant, String> NomColumn;
 	    @FXML
@@ -107,20 +104,18 @@ public class AdminEnsController {
 	    private TableColumn<Enseignant, String> EmailColumn;
 	    @FXML
 	    private TableColumn<Enseignant, String> MatiereColumn;
-	    @SuppressWarnings("restriction")
 		@FXML
-	    private TableColumn<Enseignant, AsInteger> NombreAbsColumn;
+	    private TableColumn<Enseignant, Integer> NombreAbsColumn;
 	    
-	    @SuppressWarnings("restriction")
 		public void initialize() {
 	    	//set up the columns in the table
-	    	EnseignantIdColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,AsInteger>("enseignantId"));
+	    	EnseignantIdColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,Integer>("enseignantId"));
 	    	NomColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,String>("nom"));
 	    	PrenomColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,String>("prenom"));
 	    	DateDeNaissanceColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,LocalDate>("dateDeNaissance"));
 	    	EmailColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,String>("email"));
 	    	MatiereColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,String>("matiere"));
-	    	NombreAbsColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,AsInteger>("NbrAbs"));
+	    	NombreAbsColumn.setCellValueFactory(new PropertyValueFactory<Enseignant,Integer>("NbrAbs"));
 	    	
 	    	//load some data
 	    	tableView.setItems(getEnseignant());

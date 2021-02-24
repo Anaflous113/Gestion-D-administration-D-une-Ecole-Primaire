@@ -1,9 +1,16 @@
 package application;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
+
 import classProjet.Enseignant;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,11 +20,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class AddEnsController {
+
+    @FXML
+    private Button sel;
+	  private FileChooser fileChooser;
+	    private File filePath;
+	    private Image image;
+	    private  BufferedImage bufferedImage;
+	    public Image getImage(){ return this.image; }
+	    public void setImage(Image image) { this.image= image; }
+	    @FXML
+	    private ImageView ensView;
 	
 	    @FXML
 	    private TextField NomTextField;
@@ -86,5 +106,33 @@ public class AddEnsController {
 	        stage.show();
 	       }
 
+	 
+
+	    void Initialize() {
+	        try {
+	            bufferedImage = ImageIO.read(new File("/Images/JJe.jpg")) ;
+	            Image image = SwingFXUtils.toFXImage(bufferedImage,null) ;
+	            this.setImage(image);
+	            ensView.setImage(this.getImage());
+	        } catch(IOException e){
+	            e.printStackTrace();
+	        } 
+	        }
+	    @FXML
+	    void SelectionnerImage(ActionEvent event) {
+	        Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+	        fileChooser = new FileChooser() ;
+	        fileChooser.setTitle("open image") ;
+	        //set to user’s directory or go to the default C drive if cannot access
+	        File adminDirectory = new File(".") ;
+	        fileChooser.setInitialDirectory(adminDirectory) ;
+	        this.filePath = fileChooser.showOpenDialog(primaryStage) ;
+	        try {
+	            FileUtils.copyFile(this.filePath, new File("/Images/JJe.jpg"));
+	            Initialize();
+	        } catch(IOException e){
+	            e.printStackTrace();
+	        }
+	    }
 	}
 

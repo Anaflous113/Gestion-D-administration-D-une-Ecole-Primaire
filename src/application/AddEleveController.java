@@ -1,9 +1,16 @@
 package application;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
+
 import classProjet.Eleve;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,8 +20,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class AddEleveController {
@@ -44,8 +53,77 @@ public class AddEleveController {
     
     @FXML
     private Button btn1;
+    @FXML
+    private ImageView parentView;
+
+    @FXML
+    private Button parentselct;
+
     
     @FXML
+    private Button select;
+    @FXML
+    private ImageView  elevView;
+    private FileChooser fileChooser;
+    private File filePath;
+    private Image image;
+    private  BufferedImage bufferedImage;
+    public Image getImage(){ return this.image; }
+    public void setImage(Image image) { this.image= image; }
+    void Initialize() {
+        try {
+            bufferedImage = ImageIO.read(new File("/Images/JJe.jpg")) ;
+            Image image = SwingFXUtils.toFXImage(bufferedImage,null) ;
+            this.setImage(image);
+            elevView.setImage(this.getImage());
+        } catch(IOException e){
+            e.printStackTrace();
+        } 
+        }
+    @FXML
+    void SelectionnerImage(ActionEvent event) {
+        Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser() ;
+        fileChooser.setTitle("open image") ;
+        //set to user’s directory or go to the default C drive if cannot access
+        File adminDirectory = new File(".") ;
+        fileChooser.setInitialDirectory(adminDirectory) ;
+        this.filePath = fileChooser.showOpenDialog(primaryStage) ;
+        try {
+            FileUtils.copyFile(this.filePath, new File("/Images/JJe.jpg"));
+            Initialize();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    void Initialize2() {
+        try {
+            bufferedImage = ImageIO.read(new File("/Images/JJe.jpg")) ;
+            Image image = SwingFXUtils.toFXImage(bufferedImage,null) ;
+            this.setImage(image);
+            parentView.setImage(this.getImage());
+        } catch(IOException e){
+            e.printStackTrace();
+        } 
+        }
+    @FXML
+    void SelectionnerImage2(ActionEvent event) {
+        Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser() ;
+        fileChooser.setTitle("open image") ;
+        //set to user’s directory or go to the default C drive if cannot access
+        File adminDirectory = new File(".") ;
+        fileChooser.setInitialDirectory(adminDirectory) ;
+        this.filePath = fileChooser.showOpenDialog(primaryStage) ;
+        try {
+            FileUtils.copyFile(this.filePath, new File("/Images/JJe.jpg"));
+            Initialize2();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    
     void initialize() {
 
         ChoiceBox.getItems().add("        Cp1       ");

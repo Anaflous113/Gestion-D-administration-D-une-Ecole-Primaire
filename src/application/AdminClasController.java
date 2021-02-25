@@ -43,7 +43,13 @@ public class AdminClasController {
 	    @FXML private Stage stage;
 	    private Scene scene;
 	    private Parent root;
-	    
+	    public void logOut(MouseEvent  event) throws IOException {
+		     root = FXMLLoader.load(getClass().getResource("Choix.fxml"));
+		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		     scene = new Scene(root);
+		     stage.setScene(scene);
+		     stage.show();
+	    }
 	    public void switchToAccueil(ActionEvent event) throws IOException {
 		     root = FXMLLoader.load(getClass().getResource("Profiladm.fxml"));
 		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();

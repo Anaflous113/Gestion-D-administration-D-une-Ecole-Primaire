@@ -17,12 +17,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 public class AdminEnsController {
 	  @FXML
@@ -49,9 +53,6 @@ public class AdminEnsController {
 	    @FXML
 	    private Button btn8;
 	    
-	    @FXML
-	    private Button btn9;
-
 	    @FXML
 	    private ImageView Close;
 	    @FXML private Stage stage;
@@ -147,6 +148,12 @@ public class AdminEnsController {
 	    	
 	    	//load some data
 	    	tableView.setItems(getEnseignant());
+	    	
+	    	tableView.setEditable(true);
+	    	NombreAbsColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+	    	
+	    	tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+	    	
 	    }
 	    
 	    public ObservableList<Enseignant> getEnseignant(){
@@ -159,14 +166,39 @@ public class AdminEnsController {
 	    	
 	    }
 	    
+	    public void delete() {
+	    	ObservableList<Enseignant> selectedRows, allEnseignant;
+	    	allEnseignant = tableView.getItems();
+	    	selectedRows = tableView.getSelectionModel().getSelectedItems();
+	    	
+	    	for (Enseignant enseignant:selectedRows ) {
+	    		allEnseignant.remove(enseignant);
+	    	}
+	    	
+	    }
+ 
+	    public void changeNbrAbsCellEvent(CellEditEvent edditedCell) {
+	    	Enseignant enseignantSelected = tableView.getSelectionModel().getSelectedItem();
+            enseignantSelected.setNbrAbs(Integer.valueOf(edditedCell.getNewValue().toString()));
+	    	
+	    	
+	    }
 	    
 	    
-	    public void switchToaddEns(ActionEvent event) throws IOException {
-	        root = FXMLLoader.load(getClass().getResource("AddEns.fxml"));
-	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	        scene = new Scene(root);
-	        stage.setScene(scene);
-	        stage.show();
-	       }   
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	
 }

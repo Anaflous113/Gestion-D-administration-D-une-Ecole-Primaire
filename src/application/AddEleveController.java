@@ -85,7 +85,7 @@ public class AddEleveController {
         Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
         fileChooser = new FileChooser() ;
         fileChooser.setTitle("open image") ;
-        //set to user’s directory or go to the default C drive if cannot access
+        //set to userï¿½s directory or go to the default C drive if cannot access
         File adminDirectory = new File(".") ;
         fileChooser.setInitialDirectory(adminDirectory) ;
         this.filePath = fileChooser.showOpenDialog(primaryStage) ;
@@ -111,7 +111,7 @@ public class AddEleveController {
         Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
         fileChooser = new FileChooser() ;
         fileChooser.setTitle("open image") ;
-        //set to user’s directory or go to the default C drive if cannot access
+        //set to userï¿½s directory or go to the default C drive if cannot access
         File adminDirectory = new File(".") ;
         fileChooser.setInitialDirectory(adminDirectory) ;
         this.filePath = fileChooser.showOpenDialog(primaryStage) ;
@@ -149,8 +149,8 @@ public class AddEleveController {
     
     @FXML
     void AddAction(ActionEvent event) throws IOException {
-        //Eleve eleve = new Eleve(0,0,NomTextField.getText(), PrenomTextField.getText(), EmailTextField.getText(), LocalDate.parse(DateDeNaissanceTextField.getText()),0,0,0);
-       // DBClass.usersCollection.insertOne(eleve);
+        Eleve eleve = new Eleve(0,0,NomTextField.getText(), PrenomTextField.getText(), EmailTextField.getText(), LocalDate.parse(DateDeNaissanceTextField.getText()),0,0,0);
+       // Connexion avec base de donnees
        switchToAdminEns(event);
     }
 

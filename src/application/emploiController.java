@@ -74,7 +74,7 @@ public class emploiController {
 	        Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
 	         fileChooser = new FileChooser() ;
 	        fileChooser.setTitle("open image") ;
-	        //set to user’s directory or go to the default C drive if cannot access
+	        //set to userï¿½s directory or go to the default C drive if cannot access
 	        File adminDirectory = new File(".") ;
 	        fileChooser.setInitialDirectory(adminDirectory) ;
 	        this.filePath = fileChooser.showOpenDialog(primaryStage) ;

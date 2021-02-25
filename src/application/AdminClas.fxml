@@ -214,7 +214,7 @@
           <TableColumn fx:id="IdClasseColumn" prefWidth="122.0" text="IdClasse" />
           <TableColumn fx:id="NomClasseColumn" minWidth="1.0" prefWidth="173.0" text="NomClasse" />
             <TableColumn fx:id="NiveauColumn" prefWidth="163.0" text="Niveau" />
-            <TableColumn fx:id="MoyenneColumn" prefWidth="150.0" text="Moyenne" />
+            <TableColumn fx:id="MoyenneColumn" onEditCommit="#changeMoyenneCellEvent" prefWidth="150.0" text="Moyenne" />
         </columns>
       </TableView>
    </children>

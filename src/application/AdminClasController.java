@@ -14,10 +14,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.converter.DoubleStringConverter;
 
 public class AdminClasController {
 	  @FXML
@@ -114,15 +117,24 @@ public class AdminClasController {
 	    	
 	    	//load some data
 	    	tableView.setItems(getClasse());
+	    	
+	    	tableView.setEditable(true);
+	    	MoyenneColumn.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
 	    }
 	    
 	    public ObservableList<Classe> getClasse(){
 			
 	    	ObservableList<Classe> classe = FXCollections.observableArrayList();
-	    	classe.add(new Classe(12,16.5,"hajar","ouajjani"));
+	    	classe.add(new Classe(12,16.5,"Salle 1","Cp1"));
+	    	classe.add(new Classe(12,16.5,"Salle 2","Cp2"));
 	    	return classe;
 	    	
 	    	
+	    }
+	    
+	    public void changeMoyenneCellEvent(CellEditEvent edditedCell) {
+	    	Classe eleveSelected = tableView.getSelectionModel().getSelectedItem();
+            eleveSelected.setMoyenne(Double.valueOf(edditedCell.getNewValue().toString()));    	
 	    }
 	   
 	

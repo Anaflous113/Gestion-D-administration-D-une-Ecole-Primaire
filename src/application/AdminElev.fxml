@@ -216,15 +216,20 @@
             <TableColumn fx:id="PrenomColumn" prefWidth="66.0" text="Prenom" />
             <TableColumn fx:id="DateDeNaissanceColumn" prefWidth="113.0" text="DateDeNaissance" />
             <TableColumn fx:id="EmailColumn" prefWidth="84.0" text="Email" />
-            <TableColumn fx:id="NombreAbsColumn" prefWidth="75.0" text="NombreAbs" />
-            <TableColumn fx:id="NoteS1Column" prefWidth="53.0" text="NoteS1" />
-            <TableColumn fx:id="NoteS2Column" prefWidth="56.0" text="NoteS2" />
-            <TableColumn fx:id="NoteTotaleColumn" prefWidth="75.0" text="NoteTotale" />
+            <TableColumn fx:id="NombreAbsColumn" onEditCommit="#changeNbrAbsCellEvent" prefWidth="75.0" text="NombreAbs" />
+            <TableColumn fx:id="NoteS1Column" onEditCommit="#changeNoteS1CellEvent" prefWidth="53.0" text="NoteS1" />
+            <TableColumn fx:id="NoteS2Column" onEditCommit="#changeNoteS2CellEvent" prefWidth="56.0" text="NoteS2" />
+            <TableColumn fx:id="NoteTotaleColumn" onEditCommit="#changeNoteTotaleCellEvent" prefWidth="75.0" text="NoteTotale" />
         </columns>
       </TableView>
-      <Button fx:id="btn7" layoutX="670.0" layoutY="397.0" mnemonicParsing="false" onAction="#switchToAddE" style="-fx-background-color: #a479b8;" text="Ajouter " textFill="WHITE">
+      <Button fx:id="btn7" layoutX="288.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchToAddE" prefHeight="34.0" prefWidth="177.0" style="-fx-background-color: #a479b8;" text="Ajouter un élève" textFill="WHITE">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn8" layoutX="547.0" layoutY="383.0" mnemonicParsing="false" onAction="#delete" prefHeight="34.0" prefWidth="177.0" style="-fx-background-color: #a479b8;" text="Supprimer un élève" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
          </font>
       </Button>
    </children>

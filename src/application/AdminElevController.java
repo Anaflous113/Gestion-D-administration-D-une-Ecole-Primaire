@@ -14,12 +14,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.converter.DoubleStringConverter;
+import javafx.util.converter.IntegerStringConverter;
 
 public class AdminElevController {
 	  @FXML
@@ -42,6 +47,9 @@ public class AdminElevController {
 	    
 	    @FXML
 	    private Button btn7;
+	    
+	    @FXML
+	    private Button btn8;
 
 	    @FXML
 	    private ImageView Close;
@@ -149,6 +157,27 @@ public class AdminElevController {
 	    	NoteTotaleColumn.setCellValueFactory(new PropertyValueFactory<Eleve,Double>("noteTotale"));
 	    	//load some data
 	    	tableView.setItems(getEleve());
+	    	
+	    	tableView.setEditable(true);
+	    	NombreAbsColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+	    	NoteS1Column.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+	    	NoteS2Column.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+	    	NoteTotaleColumn.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+	    	
+	    	tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+	    }
+	    
+	    
+	    public void delete() {
+	    	ObservableList<Eleve> selectedRows, allEleve;
+	    	allEleve = tableView.getItems();
+	    	selectedRows = tableView.getSelectionModel().getSelectedItems();
+	    	
+	    	for (Eleve eleve:selectedRows ) {
+	    		allEleve.remove(eleve);
+	    	}
+	    	
 	    }
 	    
 	    public ObservableList<Eleve> getEleve(){
@@ -160,4 +189,27 @@ public class AdminElevController {
 	    	
 	    	
 	    }
+	    
+	    public void changeNbrAbsCellEvent(CellEditEvent edditedCell) {
+	    	Eleve eleveSelected = tableView.getSelectionModel().getSelectedItem();
+            eleveSelected.setNombreAbs(Integer.valueOf(edditedCell.getNewValue().toString()));		
+	    }
+	    public void changeNoteS1CellEvent(CellEditEvent edditedCell) {
+	    	Eleve eleveSelected = tableView.getSelectionModel().getSelectedItem();
+            eleveSelected.setNoteS1(Double.valueOf(edditedCell.getNewValue().toString()));    	
+	    }
+	    public void changeNoteS2CellEvent(CellEditEvent edditedCell) {
+	    	Eleve eleveSelected = tableView.getSelectionModel().getSelectedItem();
+            eleveSelected.setNoteS2(Double.valueOf(edditedCell.getNewValue().toString()));    	
+	    }
+	    public void changeNoteTotaleCellEvent(CellEditEvent edditedCell) {
+	    	Eleve eleveSelected = tableView.getSelectionModel().getSelectedItem();
+            eleveSelected.setNoteTotale(Double.valueOf(edditedCell.getNewValue().toString()));    	
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
 }

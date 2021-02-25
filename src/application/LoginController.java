@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -22,6 +23,8 @@ public class LoginController {
 	 private Button btn_retour;
 	 @FXML
 	 private Button btn_login;
+	  @FXML
+	    private Label erreur;
 
 	    @FXML
 	    private ImageView Close;
@@ -70,7 +73,7 @@ public class LoginController {
 	                primaryStage.getScene().setFill(Color.TRANSPARENT);
 	            
 	            } else {
-	                System.out.println("Incorrect Password");
+	            	erreur.setText("Incorrect Password");
 	            }
 	        }
 	    }

@@ -12,12 +12,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-
-
-
+<<<<<<< HEAD
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminEmpController">
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminEmpController">
 
+>>>>>>> 7d355c9823423fdc9c5b48f6b7f003304a245e53
    <children>
       <BorderPane layoutX="-1.0" prefHeight="487.0" prefWidth="184.0" style="-fx-background-color: #A479B8;">
          <top>
@@ -30,7 +30,7 @@
          <center>
             <VBox layoutX="-1.0" prefHeight="357.0" prefWidth="168.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToAccueil" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
+                  <Button fx:id="btn1" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" style="-fx-background-color: none;" text="Accueil" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -181,10 +181,13 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="668.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="668.0" layoutY="40.0" onMouseClicked="#logOut" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/logout%20(2).png" />
+            <Image url="@../Images/logout2.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fx:id="Close" fitHeight="19.0" fitWidth="19.0" layoutX="771.0" layoutY="8.0" onMouseClicked="#Close" pickOnBounds="true" preserveRatio="true" styleClass="application.css">
          <image>
@@ -231,8 +234,8 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="253.0" layoutY="205.0" prefHeight="43.0" prefWidth="260.0" style="-fx-background-color: #cccccc; -fx-padding: 5;" text="Consulter empl oi du temps cycle primaire 1:" />
-      <Label layoutX="253.0" layoutY="266.0" prefHeight="43.0" prefWidth="260.0" style="-fx-background-color: #cccccc; -fx-padding: 5;" text="Consulter empl oi du temps cycle primaire 2:">
+      <Label layoutX="253.0" layoutY="205.0" prefHeight="43.0" prefWidth="260.0" style="-fx-padding: 5;" text="Consulter empl oi du temps cycle primaire 1:" />
+      <Label layoutX="253.0" layoutY="266.0" prefHeight="43.0" prefWidth="260.0" style="-fx-padding: 5;" text="Consulter empl oi du temps cycle primaire 2:">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>

@@ -30,6 +30,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
+<<<<<<< HEAD
       <Label layoutX="98.0" layoutY="415.0" text="Administration" textFill="#464545">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -43,6 +44,21 @@
             <Font name="Arial Bold" size="14.0" />
          </font></Label>
       <Label layoutX="627.0" layoutY="414.0" text="Parents" textFill="#464545">
+=======
+      <Label layoutX="98.0" layoutY="415.0" text="Administration" textFill="#514d4d">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="270.0" layoutY="415.0" text="Ensiegnants" textFill="#514d4d">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="456.0" layoutY="415.0" text="Elèves" textFill="#514d4d">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="627.0" layoutY="415.0" text="Parents" textFill="#514d4d">
+>>>>>>> 76a8a177b72673da3a8021bd257fc527886c4fd7
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font></Label>

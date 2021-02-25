@@ -29,6 +29,9 @@ import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
 public class AdminEnsController {
+	
+	
+	
 	  @FXML
 	    private Button btn1;
 
@@ -59,7 +62,13 @@ public class AdminEnsController {
 	    private Scene scene;
 	    private Parent root;
 	    
-	
+	    public void logOut(MouseEvent  event) throws IOException {
+		     root = FXMLLoader.load(getClass().getResource("Choix.fxml"));
+		     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		     scene = new Scene(root);
+		     stage.setScene(scene);
+		     stage.show();
+		    }
 	    public void switchToElev(ActionEvent event) throws IOException {
 	        root = FXMLLoader.load(getClass().getResource("AdminElev.fxml"));
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -200,5 +209,16 @@ public class AdminEnsController {
 	    
 	    
 	    
+<<<<<<< HEAD
 	
+=======
+	    public void switchToaddEns(ActionEvent event) throws IOException {
+	        root = FXMLLoader.load(getClass().getResource("AddEns.fxml"));
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        scene = new Scene(root);
+	        stage.setScene(scene);
+	        stage.show();
+	       }   
+	  
+>>>>>>> 76a8a177b72673da3a8021bd257fc527886c4fd7
 }

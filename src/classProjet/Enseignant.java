@@ -2,6 +2,8 @@ package classProjet;
 
 import java.time.LocalDate;
 
+import javafx.scene.paint.Paint;
+
 public class Enseignant {
 	private String nom, prenom, email, matiere;
 	private LocalDate dateDeNaissance;

@@ -24,3 +24,7 @@
 #Close{
     -fx-cursor: hand;
 }
+#logOut{
+   -fx-background-image: url("/Images/logout2.png")  ;
+	-fx-background-size:cover;
+}
